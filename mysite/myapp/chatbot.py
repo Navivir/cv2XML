@@ -49,9 +49,6 @@ def my_chatbot(language, freeform_text):
 #  Proceso IA
 def process_with_ai():
     freeform_text = config.textOnDocument
-    interface.label_frase1.config(text="")
     if freeform_text:
         xml_result = my_chatbot(config.language, freeform_text)
-        # Actualiza la GUI con el XML generado
-        text_processing.update_xml_output(xml_result)
-        interface.label_frase1.config(text="TRABAJO FINALIZADO")
+        print(xml_result)

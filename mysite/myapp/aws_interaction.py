@@ -15,7 +15,6 @@ def wait_for_textract_job_completion(s3_file_path):
     # Obtiene el JobId para verificar el estado más tarde
     job_id = response['JobId']
     print(f'JobId: {job_id}')
-    interface.label_frase1.config(text="Se está extrayendo el texto.")
     # Espera a que el trabajo de Textract termine
     while True:
         response = config.textract_client.get_document_text_detection(JobId=job_id)
@@ -35,7 +34,7 @@ def wait_for_textract_job_completion(s3_file_path):
             config.textOnDocument += item["Text"]
 
     # Actualiza la GUI con el texto extraído
-    interface.update_extracted_text(config.textOnDocument)
+    print('Texto extraido:' + config.textOnDocument)
     
     # Empieza a procesar la Ia una vez acabado el trabajo de textract
     threading.Thread(target=chatbot.process_with_ai).start()
@@ -44,15 +43,16 @@ def wait_for_textract_job_completion(s3_file_path):
     
     print ("----La IA está realizando correctamente su tarea de extraer información----")
     
-    interface.label_frase1.config(text="Se está realizando la generación del XML.")
+    print("Se está realizando la generación del XML.")
 
 #Carga el documento en el bucket AWS
 def upload_to_s3(local_file_path, bucket_name, s3_file_path):
     try:
         # Sube el archivo al bucket de S3
         config.s3.upload_file(local_file_path, bucket_name, s3_file_path)
-
         print(f'Archivo subido correctamente a {bucket_name}/{s3_file_path}')
+        os.remove(local_file_path)
+        print(f'Archivo eliminado correctamente de la carpeta local ---> {local_file_path}')
         return True
     except FileNotFoundError:
         print(f'Error: El archivo {local_file_path} no se encontró')

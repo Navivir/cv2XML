@@ -95,6 +95,3 @@ def parse_ai_response(ai_text):
 
     return person_data
 
-def update_xml_output(xml_text):
-    interface.text_xml_output.delete('1.0', 'end')
-    interface.text_xml_output.insert('1.0', xml_text)

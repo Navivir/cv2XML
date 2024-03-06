@@ -1,5 +1,4 @@
 import os
-import status
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -11,17 +10,18 @@ def getBucketPath(request):
     return Response({"message": "This is the bucketPath"}, status=status.HTTP_200_OK)
 
 
+
 @api_view(["POST"])
 def uploadFile(request):
 
-    uploaded_file = request.FILES.get('file')
+    uploaded_file = request.FILES['myFile']
 
     if uploaded_file:
 
         _, file_extension = os.path.splitext(uploaded_file.name)
         file_extension = file_extension.lower()
 
-        if file_extension not in ['.pdf', '.jpg', '.jpeg', '.png', '.gif']:
+        if file_extension not in ['.pdf', '.jpg', '.jpeg', '.png']:
             return Response({"message": "File format not supported"}, status=status.HTTP_400_BAD_REQUEST)
 
         current_directory = os.getcwd()
@@ -38,4 +38,5 @@ def uploadFile(request):
             return Response({"message": "Image uploaded successfully"}, status=status.HTTP_200_OK)
     else:
         return Response({"message": "No file received"}, status=status.HTTP_400_BAD_REQUEST)
+
 
