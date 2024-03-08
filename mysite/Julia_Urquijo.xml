@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<personas>
+  <persona>
+    <nombre>Julia</nombre>
+    <apellidos>Urquijo</apellidos>
+    <nombre_completo>Julia Urquijo</nombre_completo>
+    <descripcion>He estado trabajando como marinera y azafata desde 2016 en veleros y yates de motor para propietarios privados, chárter, pasajeros en el Mediterráneo, Caribe, Océano Índico. Participé en más de 30 entregas en el Mediterráneo. Después de funciones mayormente estacionales a bordo, estoy dispuesta a evolucionar hacia una posición a largo plazo. Soy organizada, jugadora de equipo y de mente abierta.</descripcion>
+    <subcategoria>Marinero/a</subcategoria>
+    <ciudad>Teléfono: +33620506940</ciudad>
+    <telefono>+33620506940</telefono>
+    <email>urquijo.julia@gmail.com</email>
+    <idiomas>
+      <idioma>INGLÉS</idioma>
+      <idioma>ESPAÑOL</idioma>
+      <idioma>ITALIANO</idioma>
+    </idiomas>
+    <titulaciones>
+      <titulacion>MÁSTER EN GESTIÓN, MARKETING Y TRADUCCIÓN</titulacion>
+      <titulacion>STCW: MARINERO DE GUARDIA, PATRÓN 250KW, OFICIAL DE GUARDIA DE NAVEGACIÓN</titulacion>
+      <titulacion>GMDSS OPERADOR RESTRINGIDO DE RADIOCOMUNICACIONES</titulacion>
+      <titulacion>PRIMEROS AUXILIOS, SEGURIDAD BÁSICA</titulacion>
+      <titulacion>CERTIFICADO DE FORMACIÓN BÁSICA DE SEGURIDAD</titulacion>
+      <titulacion>LICENCIA DE CONDUCCIÓN</titulacion>
+    </titulaciones>
+    <experiencias>
+      <experiencia>2024 - Marinera - Chárter Martinica - Catamarán de vela L620</experiencia>
+      <experiencia>2023 - Azafata - Salón Náutico Barcelona - JEANNEAU</experiencia>
+      <experiencia>2022 - Azafata - Salón Náutico Mónaco - SUNSEEKER</experiencia>
+      <experiencia>2022 - Marinera/Azafata - Chárter Islas Baleares - Catamarán a motor Bali 4.3</experiencia>
+      <experiencia>2021 - Marinera - Cataluña y Baleares - Yate de vela Wauquiez 55fts</experiencia>
+      <experiencia>2019 - Marinera - Cap de Creus - Catamaranes y monocascos a motor &lt; 80fts - Pasajeros</experiencia>
+      <experiencia>2017 - Marinera/Azafata - Cataluña y Baleares - Yates de vela Swan 45 y Halberg Rassy 48</experiencia>
+    </experiencias>
+    <referencias/>
+  </persona>
+</personas>

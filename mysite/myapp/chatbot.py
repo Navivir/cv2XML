@@ -1,6 +1,7 @@
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
-from . import (config, text_processing, interface)
+from . import (config, text_processing)
+import xml.etree.ElementTree as ET
 
 # Prompt y interacción con la IA
 def my_chatbot(language, freeform_text):
@@ -49,6 +50,22 @@ def my_chatbot(language, freeform_text):
 #  Proceso IA
 def process_with_ai():
     freeform_text = config.textOnDocument
+
     if freeform_text:
         xml_result = my_chatbot(config.language, freeform_text)
-        print(xml_result)
+
+        # Parsear el XML para extraer el título
+        root = ET.fromstring(xml_result)
+        nombre_completo_element = root.find('.//nombre_completo')
+        print(nombre_completo_element)
+        if nombre_completo_element is not None:
+            titulo = nombre_completo_element.text.strip()
+        else:
+            titulo = "Untitled"  # En caso de que no se encuentre el tag nombre_completo
+
+        # Guardar el resultado XML en un archivo .xml
+        filename = f"{titulo.replace(' ', '_')}.xml"
+        with open(filename, 'w', encoding='utf-8') as archivo:
+            archivo.write(xml_result)
+
+        print("Archivo XML generado exitosamente:", filename)

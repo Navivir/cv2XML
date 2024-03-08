@@ -4,12 +4,9 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from . import interface
 
-
 @api_view(["GET"])
 def getBucketPath(request):
     return Response({"message": "This is the bucketPath"}, status=status.HTTP_200_OK)
-
-
 
 @api_view(["POST"])
 def uploadFile(request):

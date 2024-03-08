@@ -14,3 +14,4 @@ def validate_document(entry_file_path):
     # Subir el archivo al S3 y luego iniciar el proceso en un hilo separado
     if aws_interaction.upload_to_s3(entry_file_path, bucket_name, s3_file_path):
         threading.Thread(target=lambda: aws_interaction.wait_for_textract_job_completion(s3_file_path)).start()
+

@@ -89,7 +89,7 @@ def parse_ai_response(ai_text):
         "experiencias": extract_list(ai_text, "Experiencias"),
         "referencias": extract_list(ai_text, "Referencias")
     }
-     # Imprimir el diccionario para depuración
+
     print("Datos Extraídos para XML:")
     print(person_data)
 
